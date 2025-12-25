@@ -10,6 +10,7 @@
       Title="CategoryPage">
 
     <StackPanel HorizontalAlignment="Center">
+        <Label>Просмотр категорий</Label>
         <StackPanel Orientation="Horizontal">
             <Button Click="add">Добавить</Button>
             <Button Click="remove">Удалить</Button>

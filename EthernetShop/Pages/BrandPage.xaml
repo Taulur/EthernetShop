@@ -9,8 +9,9 @@
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       Title="BrandPage">
 
-    
+
     <StackPanel HorizontalAlignment="Center">
+        <Label>Просмотр брендов</Label>
         <StackPanel Orientation="Horizontal">
             <Button Click="add">Добавить</Button>
             <Button Click="remove">Удалить</Button>

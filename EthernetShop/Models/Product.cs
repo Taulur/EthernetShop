@@ -11,7 +11,7 @@ public partial class Product
 
     public string Description { get; set; } = null!;
 
-    public double Price { get; set; }
+    public decimal Price { get; set; }
 
     public int Stock { get; set; }
 

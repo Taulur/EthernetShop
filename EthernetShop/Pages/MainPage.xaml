@@ -8,14 +8,14 @@
  mc:Ignorable="d"
  DataContext="{Binding RelativeSource={RelativeSource Self}}"
       d:DesignHeight="500" d:DesignWidth="800"
-      Title="MainPage" >
-    <StackPanel>
+      Title="MainPage">
+    <WrapPanel>
         <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Просмотр товаров"></Label>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Click="brand" Content="Бренды"/>
-            <Button Click="category" Content="Категории"/>
-            <Button Click="tag" Content="Тэги"/>
-            <Button Content="Продукты"/>
+            <Button x:Name="brandButton" Click="brand" Content="Бренды"/>
+            <Button x:Name="categoryButton"  Click="category" Content="Категории"/>
+            <Button x:Name="tagButton"  Click="tag" Content="Тэги"/>
+            <Button x:Name="productButton" Click="product" Content="Продукт"/>
         </StackPanel>
         <Grid Margin="5">
             <Grid.ColumnDefinitions>
@@ -30,11 +30,11 @@
 
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <Label>Поиск</Label>
-                <TextBox TextChanged="TextBox_TextChanged" Text="{Binding searchQuery, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите текст для поиска"/>
+                <TextBox x:Name="SearchBox" TextChanged="TextBox_TextChanged" Text="{Binding searchQuery, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите текст для поиска"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <Label FontSize="16">Сортировка</Label>
-                <ComboBox SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBox x:Name="SortBox" SelectionChanged="ComboBox_SelectionChanged">
                     <ComboBox.Items >
                         <ComboBoxItem Tag="Name">По наименованию</ComboBoxItem>
                         <ComboBoxItem Tag="Price">По цене</ComboBoxItem>
@@ -50,13 +50,7 @@
                             </StackPanel>
                         </TabItem.Header>
                         <TabItem.Content>
-                            <StackPanel>
-                                <RadioButton Checked="RadioButton_Checked" IsChecked="{Binding Path=CategoryModeArray[0]}">Смартфоны</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked"   IsChecked="{Binding Path=CategoryModeArray[1]}">Ноутбуки</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked"   IsChecked="{Binding Path=CategoryModeArray[2]}">Акссесуары</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked"    IsChecked="{Binding Path=CategoryModeArray[3]}">Планшеты</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked"   IsChecked="{Binding Path=CategoryModeArray[4]}">Телевизоры</RadioButton>
-                            </StackPanel>
+                            <StackPanel x:Name="CategoryPanel"/>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem x:Name="Brands">
@@ -67,13 +61,7 @@
                             </StackPanel>
                         </TabItem.Header>
                         <TabItem.Content>
-                            <StackPanel>
-                                <RadioButton  Checked="RadioButton_Checked" IsChecked="{Binding Path=BrandModeArray[0], Mode=TwoWay}">Samsung</RadioButton>
-                                <RadioButton   Checked="RadioButton_Checked" IsChecked="{Binding Path=BrandModeArray[1]}">Apple</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked" IsChecked="{Binding Path=BrandModeArray[2]}">Sony</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked" IsChecked="{Binding Path=BrandModeArray[3]}">Lenovo</RadioButton>
-                                <RadioButton  Checked="RadioButton_Checked" IsChecked="{Binding Path=BrandModeArray[4]}">Xiaomi</RadioButton>
-                            </StackPanel>
+                            <StackPanel x:Name="BrandPanel"/>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem  x:Name="Price">
@@ -85,9 +73,9 @@
                         <TabItem.Content>
                             <StackPanel>
                                 <Label>От</Label>
-                                <TextBox Text="{Binding filterPriceFrom,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите цену" TextChanged="TextBox_TextChanged" />
+                                <TextBox x:Name="PriceFromBox" Text="{Binding filterPriceFrom,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите цену" TextChanged="TextBox_TextChanged" />
                                 <Label>До</Label>
-                                <TextBox Text="{Binding filterPriceTo,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите цену" TextChanged="TextBox_TextChanged" />
+                                <TextBox x:Name="PriceToBox" Text="{Binding filterPriceTo,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите цену" TextChanged="TextBox_TextChanged" />
                             </StackPanel>
                         </TabItem.Content>
                     </TabItem>
@@ -96,22 +84,28 @@
                 <Button Click="Button_Click" Margin="5">Сбросить</Button>
             </StackPanel>
             <materialDesign:ColorZone Grid.Row="1" Grid.Column="1" Mode="SecondaryMid">
-                <ListView Margin="5" Height="325" ItemsSource="{Binding products}" Name="FormsList" HorizontalContentAlignment="Stretch">
+                <ListView Margin="5" MouseDoubleClick="edit" SelectedItem="{Binding current}" ItemsSource="{Binding products}" Name="FormsList" HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
+                            <Border x:Name="ProductBorder" >
+
+                                <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Grid.Column="0">
+                                <StackPanel>
                                     <TextBlock FontSize="15" Text="{Binding Name}"/>
                                     <TextBlock>
                                     <Run Text="★"/>
                                     <Run Text="Рейтинг "/>
                                     <Run Text="{Binding Rating}"/>
                                     </TextBlock>
-                                    <TextBlock>
+                                        <TextBlock>
+ <Run Text="Категория "/>
+ <Run Text="{Binding Category.Name}"/>
+                                        </TextBlock>
+                                        <TextBlock>
                                     <Run Text="Описание "/>
                                     <Run Text="{Binding Description}"/>
                                     </TextBlock>
@@ -126,7 +120,7 @@
                                         </ItemsControl.ItemTemplate>
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
-                                                <WrapPanel></WrapPanel>
+                                                <StackPanel Orientation="Horizontal"></StackPanel>
                                             </ItemsPanelTemplate>
                                         </ItemsControl.ItemsPanel>
                                     </ItemsControl>
@@ -142,15 +136,47 @@
                                     </TextBlock>
                                 </StackPanel>
                             </Grid>
+                            </Border>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding Stock}" Value="9">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="8">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="7">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="6">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="5">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="4">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="3">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="2">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="1">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Stock}" Value="0">
+                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </materialDesign:ColorZone>
             <WrapPanel Grid.Row="2" Grid.ColumnSpan="2">
-
-
+                <TextBlock Text="{Binding products.Count, StringFormat='{} Всего записей:{0}'}"/>
+                <TextBlock Text="{Binding Items.Count, ElementName=FormsList, StringFormat='{} Показано: {0}'}"/>
             </WrapPanel>
         </Grid>
-    </StackPanel>
-   
+    </WrapPanel>
 </Page>

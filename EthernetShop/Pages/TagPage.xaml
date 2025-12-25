@@ -10,6 +10,7 @@
       Title="TagPage">
 
     <StackPanel HorizontalAlignment="Center">
+        <Label>Просмотр тегов</Label>
         <StackPanel Orientation="Horizontal">
             <Button Click="add">Добавить</Button>
             <Button Click="remove">Удалить</Button>

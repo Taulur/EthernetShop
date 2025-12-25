@@ -25,23 +25,26 @@ namespace EthernetShop.Pages
     /// Логика взаимодействия для MainPage.xaml
     /// </summary>
     public partial class MainPage : Page
-    { 
+    {
+        bool isAdmin = false;
         public ObservableCollection<Product> products { get; set; } = new();
         public ObservableCollection<Tag> tags { get; set; } = new();
         public ICollectionView productsView { get; set; }
         public string searchQuery { get; set; } = null!;
         public string filterPriceFrom { get; set; } = null!;
         public string filterPriceTo { get; set; } = null!;
+        public Product current { get; set; } = new();
         EthernetShopContext context = DBService.Instance.Context;
 
         private bool[] _categoryModeArray = new bool[] { false, false, false, false, false };
         public bool[] CategoryModeArray
         {
             get { return _categoryModeArray; }
+            set { _categoryModeArray = value; }
         }
         public int CategorySelectedMode
         {
-            get { return Array.IndexOf(_categoryModeArray, true);}
+            get { return Array.IndexOf(_categoryModeArray, true); }
             set
             {
                 for (int i = 0; i < 0; i++)
@@ -49,13 +52,14 @@ namespace EthernetShop.Pages
                     _categoryModeArray[i] = false;
                 }
             }
-                    
+
         }
 
         private bool[] _brandyModeArray = new bool[] { false, false, false, false, false };
         public bool[] BrandModeArray
         {
             get { return _brandyModeArray; }
+            set { _brandyModeArray = value; }
         }
         public int BrandSelectedMode
         {
@@ -70,16 +74,34 @@ namespace EthernetShop.Pages
         }
 
 
-        public MainPage()
+        public MainPage(bool _isAdmin)
         {
             LoadList();
             productsView = CollectionViewSource.GetDefaultView(products);
             productsView.Filter = FilterProducts;
 
+            isAdmin = _isAdmin;
+
+            
+
             InitializeComponent();
+
+            var adminButtons = new List<Button>
+    {
+        brandButton,
+        categoryButton,
+        tagButton,
+        productButton
+    };
+            foreach (var button in adminButtons)
+            {
+                button.Visibility = _isAdmin ? Visibility.Visible : Visibility.Collapsed;
+            }
+
+            BuildCategoryRadioButtons();
+            BuildBrandRadioButtons();
         }
-        //object sender, EventArgs e
-        public void LoadList() // СДЕЛАТЬ ТЭГИ
+        public void LoadList() 
         {
             tags.Clear();
             foreach (var tag in context.Tags.ToList())
@@ -89,12 +111,10 @@ namespace EthernetShop.Pages
 
             products.Clear();
 
-            // Используем Include для загрузки связанных тегов
             foreach (var product in context.Products
-                .Include(p => p.Tags)  // Это важно!
+                .Include(p => p.Tags) 
                 .ToList())
             {
-                // Для проверки - можно оставить или убрать
                 foreach (var tag in product.Tags)
                 {
                     Console.WriteLine($"Product: {product.Name}, Tag: {tag.Name}");
@@ -111,9 +131,9 @@ namespace EthernetShop.Pages
             var product = (Product)obj;
             if (searchQuery != null && !product.Name.Contains(searchQuery, StringComparison.CurrentCultureIgnoreCase))
                 return false;
-            if (!filterPriceFrom.IsNullOrEmpty() && Convert.ToDouble(filterPriceFrom) > product.Price)
+            if (!filterPriceFrom.IsNullOrEmpty() && Convert.ToDecimal(filterPriceFrom) > product.Price)
                 return false;
-            if (!filterPriceTo.IsNullOrEmpty() && Convert.ToDouble(filterPriceTo) < product.Price)
+            if (!filterPriceTo.IsNullOrEmpty() && Convert.ToDecimal(filterPriceTo) < product.Price)
                 return false;
             if (CategorySelectedMode != -1)
             {
@@ -137,21 +157,25 @@ namespace EthernetShop.Pages
             productsView.SortDescriptions.Clear();
             var cb = (ComboBox)sender;
             var selected = (ComboBoxItem)cb.SelectedItem;
-            switch (selected.Tag)
+            if (selected != null)
             {
-                case "Name":
-                    productsView.SortDescriptions.Add(new SortDescription("Name",
-                    ListSortDirection.Ascending));
-                    break;
-                case "Price":
-                    productsView.SortDescriptions.Add(new SortDescription("Price",
-                    ListSortDirection.Ascending));
-                    break;
-                case "Count":
-                    productsView.SortDescriptions.Add(new SortDescription("Stock",
-                    ListSortDirection.Ascending));
-                    break;
+                switch (selected.Tag)
+                {
+                    case "Name":
+                        productsView.SortDescriptions.Add(new SortDescription("Name",
+                        ListSortDirection.Ascending));
+                        break;
+                    case "Price":
+                        productsView.SortDescriptions.Add(new SortDescription("Price",
+                        ListSortDirection.Ascending));
+                        break;
+                    case "Count":
+                        productsView.SortDescriptions.Add(new SortDescription("Stock",
+                        ListSortDirection.Ascending));
+                        break;
+                }
             }
+            
             productsView.Refresh();
         }
 
@@ -168,14 +192,45 @@ namespace EthernetShop.Pages
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) // СБРОС
+        private void Button_Click(object sender, RoutedEventArgs e) 
         {
-            //searchQuery = null;
-            //filterPriceFrom = null;
-            //filterPriceTo = null;
-            //CategorySelectedMode = -1;
-            //BrandSelectedMode = -1;
-            //productsView.Refresh();
+         
+            searchQuery = null;
+            filterPriceFrom = null;
+            filterPriceTo = null;
+
+        
+            if (_categoryModeArray != null)
+            {
+                for (int i = 0; i < _categoryModeArray.Length; i++)
+                {
+                    _categoryModeArray[i] = false;
+                }
+            }
+
+            if (_brandyModeArray != null)
+            {
+                for (int i = 0; i < _brandyModeArray.Length; i++)
+                {
+                    _brandyModeArray[i] = false;
+                }
+            }
+
+           
+            SortBox.SelectedIndex = -1;
+
+            // 4. Очищаем поля ввода
+            if (SearchBox != null)
+                SearchBox.Text = string.Empty;
+
+            if (PriceFromBox != null)
+                PriceFromBox.Text = string.Empty;
+
+            if (PriceToBox != null)
+                PriceToBox.Text = string.Empty;
+
+          
+            productsView.Refresh();
 
         }
 
@@ -189,9 +244,81 @@ namespace EthernetShop.Pages
             NavigationService.Navigate(new CategoryPage());
         }
 
+        private void product(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditProductPage());
+        }
+
         private void tag(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new TagPage());
+        }
+
+        private void edit(object sender, RoutedEventArgs e)
+        {
+            if (isAdmin)
+                NavigationService.Navigate(new EditProductPage(current));
+
+        }
+
+        private void BuildCategoryRadioButtons()
+        {
+            var categories = context.Categories
+                                    .ToList();
+
+            Array.Resize(ref _categoryModeArray, categories.Count);
+            CategoryModeArray = _categoryModeArray;
+
+            for (int i = 0; i < categories.Count; i++)
+            {
+                var rb = new RadioButton
+                {
+                    Content = categories[i].Name,
+                    Tag = categories[i].Id
+                };
+
+                var binding = new Binding
+                {
+                    Source = CategoryModeArray,
+                    Path = new PropertyPath($"[{i}]"),
+                    Mode = BindingMode.TwoWay
+                };
+                rb.SetBinding(RadioButton.IsCheckedProperty, binding);
+
+                rb.Checked += RadioButton_Checked;
+
+                CategoryPanel.Children.Add(rb);
+            }
+        }
+
+        private void BuildBrandRadioButtons()
+        {
+            var brands = context.Brands
+                                .ToList();
+
+            Array.Resize(ref _categoryModeArray, brands.Count);
+            BrandModeArray = _categoryModeArray;
+
+            for (int i = 0; i < brands.Count; i++)
+            {
+                var rb = new RadioButton
+                {
+                    Content = brands[i].Name,
+                    Tag = brands[i].Id
+                };
+
+                var binding = new Binding
+                {
+                    Source = BrandModeArray,
+                    Path = new PropertyPath($"[{i}]"),
+                    Mode = BindingMode.TwoWay
+                };
+                rb.SetBinding(RadioButton.IsCheckedProperty, binding);
+
+                rb.Checked += RadioButton_Checked;
+
+                BrandPanel.Children.Add(rb);
+            }
         }
     }
 }

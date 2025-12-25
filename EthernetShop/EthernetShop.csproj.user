@@ -14,12 +14,16 @@
     <Compile Update="Pages\EditCategoryPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\EditProductPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\EditTagPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\MainPage.xaml.cs">
+    <Compile Update="Pages\LoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\MainPage.xaml.cs" />
     <Compile Update="Pages\TagPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

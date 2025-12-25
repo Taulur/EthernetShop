@@ -65,7 +65,9 @@ public partial class EthernetShopContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(255)
                 .HasColumnName("name");
-            entity.Property(e => e.Price).HasColumnName("price");
+            entity.Property(e => e.Price)
+                .HasColumnType("money")
+                .HasColumnName("price");
             entity.Property(e => e.Rating).HasColumnName("rating");
             entity.Property(e => e.Stock).HasColumnName("stock");
 

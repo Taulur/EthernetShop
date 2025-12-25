@@ -30,7 +30,7 @@ namespace EthernetShop.Pages
             InitializeComponent();
             if (tag != null)
             {
-                //service.LoadRelation(tag, "Products");
+              
                 _tag = tag;
                 IsEdit = true;
             }

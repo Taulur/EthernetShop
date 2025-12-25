@@ -1,0 +1,54 @@
+﻿<Page x:Class="EthernetShop.Pages.EditProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EthernetShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+       DataContext="{Binding RelativeSource={RelativeSource Self}}"
+      Title="EditProductPage">
+    
+
+    <WrapPanel Orientation="Vertical">
+        <Label>Продукт</Label>
+        <StackPanel>
+            <Label>Наименование продукта</Label>
+            <TextBox Text="{Binding product.Name}"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Описание продукта</Label>
+            <TextBox Text="{Binding product.Description}"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Цена</Label>
+            <TextBox Text="{Binding product.Price}"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Количество</Label>
+            <TextBox Text="{Binding product.Stock}"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Рейтинг</Label>
+            <TextBox Text="{Binding product.Rating}"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Категория</Label>
+            <ComboBox Text="{Binding product.Category.Name}" ItemsSource="{Binding categoryService.Categories}"
+DisplayMemberPath="Name"
+SelectedValuePath="Id"
+SelectedValue="{Binding categoryId}" Margin="0,5"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Бренд</Label>
+            <ComboBox Text="{Binding product.Brand.Name}" ItemsSource="{Binding brandService.Brands}"
+DisplayMemberPath="Name"
+SelectedValuePath="Id"
+SelectedValue="{Binding brandId}" Margin="0,5"/>
+        </StackPanel>
+        <StackPanel>
+            <Button Click="save">Сохранить</Button>
+            <Button Click="back">Назад</Button>
+        </StackPanel>
+    </WrapPanel>
+</Page>

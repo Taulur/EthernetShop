@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:EthernetShop"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
-    <Frame NavigationUIVisibility="Hidden" Source="Pages/MainPage.xaml"/>
+    <Frame NavigationUIVisibility="Hidden" Source="Pages/LoginPage.xaml"/>
 </Window>
