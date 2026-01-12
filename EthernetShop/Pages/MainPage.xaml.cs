@@ -169,7 +169,7 @@ namespace EthernetShop.Pages
                         productsView.SortDescriptions.Add(new SortDescription("Price",
                         ListSortDirection.Ascending));
                         break;
-                    case "Count":
+                    case "Stock":
                         productsView.SortDescriptions.Add(new SortDescription("Stock",
                         ListSortDirection.Ascending));
                         break;

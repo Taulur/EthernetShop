@@ -170,3 +170,4 @@ C:\Учеба\EthernetShop\EthernetShop\obj\Debug\net8.0-windows\Pages\EditTagPa
 C:\Учеба\EthernetShop\EthernetShop\obj\Debug\net8.0-windows\Pages\LoginPage.baml
 C:\Учеба\EthernetShop\EthernetShop\obj\Debug\net8.0-windows\Pages\MainPage.baml
 C:\Учеба\EthernetShop\EthernetShop\obj\Debug\net8.0-windows\Pages\TagPage.baml
+C:\Учеба\EthernetShop\EthernetShop\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

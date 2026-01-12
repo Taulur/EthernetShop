@@ -4,11 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EthernetShop.Pages"
+      xmlns:converter="clr-namespace:EthernetShop.Converter"
      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
  mc:Ignorable="d"
  DataContext="{Binding RelativeSource={RelativeSource Self}}"
       d:DesignHeight="500" d:DesignWidth="800"
       Title="MainPage">
+    <Page.Resources>
+        <converter:BorderConverter x:Key="BorderConverter"/>
+    </Page.Resources>
     <WrapPanel>
         <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Просмотр товаров"></Label>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -87,9 +91,9 @@
                 <ListView Margin="5" MouseDoubleClick="edit" SelectedItem="{Binding current}" ItemsSource="{Binding products}" Name="FormsList" HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Border x:Name="ProductBorder" >
+                            <Border x:Name="ProductBorder" Style="{StaticResource Stock}" >
 
-                                <Grid>
+                                <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
@@ -138,36 +142,11 @@
                             </Grid>
                             </Border>
                             <DataTemplate.Triggers>
-                                <DataTrigger Binding="{Binding Stock}" Value="9">
+                                <DataTrigger Binding="{Binding Stock, Converter={StaticResource BorderConverter}, ConverterParameter=10}" Value="True">
                                     <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
+                                    <Setter TargetName="ProductBorder" Property="BorderThickness" Value="3"/>
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="8">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="7">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="6">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="5">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="4">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="3">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="2">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="1">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Stock}" Value="0">
-                                    <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
-                                </DataTrigger>
+                                
                             </DataTemplate.Triggers>
                         </DataTemplate>
                     </ListView.ItemTemplate>
