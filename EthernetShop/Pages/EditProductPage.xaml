@@ -8,47 +8,52 @@
       d:DesignHeight="450" d:DesignWidth="800"
        DataContext="{Binding RelativeSource={RelativeSource Self}}"
       Title="EditProductPage">
-    
 
-    <WrapPanel Orientation="Vertical">
-        <Label>Продукт</Label>
-        <StackPanel>
-            <Label>Наименование продукта</Label>
-            <TextBox Text="{Binding product.Name}"/>
-        </StackPanel>
-        <StackPanel>
-            <Label>Описание продукта</Label>
-            <TextBox Text="{Binding product.Description}"/>
-        </StackPanel>
-        <StackPanel>
-            <Label>Цена</Label>
-            <TextBox Text="{Binding product.Price}"/>
-        </StackPanel>
-        <StackPanel>
-            <Label>Количество</Label>
-            <TextBox Text="{Binding product.Stock}"/>
-        </StackPanel>
-        <StackPanel>
-            <Label>Рейтинг</Label>
-            <TextBox Text="{Binding product.Rating}"/>
-        </StackPanel>
-        <StackPanel>
-            <Label>Категория</Label>
-            <ComboBox Text="{Binding product.Category.Name}" ItemsSource="{Binding categoryService.Categories}"
+
+    <StackPanel>
+        <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Взаимодействие с продуктом">
+        </Label>
+        <ScrollViewer Height="400">
+            <StackPanel Orientation="Vertical">
+                <StackPanel>
+                    <Label>Наименование продукта</Label>
+                    <TextBox Text="{Binding product.Name}"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label>Описание продукта</Label>
+                    <TextBox Text="{Binding product.Description}"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label>Цена</Label>
+                    <TextBox Text="{Binding product.Price}"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label>Количество</Label>
+                    <TextBox Text="{Binding product.Stock}"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label>Рейтинг</Label>
+                    <TextBox Text="{Binding product.Rating}"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label>Категория</Label>
+                    <ComboBox Text="{Binding product.Category.Name}" ItemsSource="{Binding categoryService.Categories}"
 DisplayMemberPath="Name"
 SelectedValuePath="Id"
 SelectedValue="{Binding categoryId}" Margin="0,5"/>
-        </StackPanel>
-        <StackPanel>
-            <Label>Бренд</Label>
-            <ComboBox Text="{Binding product.Brand.Name}" ItemsSource="{Binding brandService.Brands}"
+                </StackPanel>
+                <StackPanel>
+                    <Label>Бренд</Label>
+                    <ComboBox Text="{Binding product.Brand.Name}" ItemsSource="{Binding brandService.Brands}"
 DisplayMemberPath="Name"
 SelectedValuePath="Id"
 SelectedValue="{Binding brandId}" Margin="0,5"/>
-        </StackPanel>
-        <StackPanel>
-            <Button Click="save">Сохранить</Button>
-            <Button Click="back">Назад</Button>
-        </StackPanel>
-    </WrapPanel>
+                </StackPanel>
+                <StackPanel>
+                    <Button Click="save">Сохранить</Button>
+                    <Button Click="back">Назад</Button>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
 </Page>

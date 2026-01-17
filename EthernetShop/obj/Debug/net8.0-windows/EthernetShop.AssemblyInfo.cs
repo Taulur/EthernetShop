@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EthernetShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d1d16aae428592e040cd079d2e9274719c1c401")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90d48d010b9af5975a609f0808c4de6858dde8e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("EthernetShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EthernetShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

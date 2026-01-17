@@ -8,8 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditTagPage">
 
-    <WrapPanel>
+    <StackPanel>
+        
         <StackPanel>
+            <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Взаимодействие с тэгом"></Label>
             <Label>Наименование тэга</Label>
             <TextBox Text="{Binding Name}"/>
         </StackPanel>
@@ -17,5 +19,5 @@
             <Button Click="save">Сохранить</Button>
             <Button Click="back">Назад</Button>
         </StackPanel>
-    </WrapPanel>
+    </StackPanel>
 </Page>

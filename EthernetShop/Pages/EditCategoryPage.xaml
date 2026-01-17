@@ -10,7 +10,9 @@
 
     <StackPanel>
         <StackPanel>
-            <Label>Наименование категории</Label>
+            <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Взаимодействие с категорией">
+            </Label>
+            <Label Margin="5"  FontSize="18" Content="Название"/>
             <TextBox Text="{Binding Name}"/>
         </StackPanel>
         <StackPanel>
