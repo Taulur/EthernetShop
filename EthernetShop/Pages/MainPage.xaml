@@ -13,25 +13,35 @@
     <Page.Resources>
         <converter:BorderConverter x:Key="BorderConverter"/>
     </Page.Resources>
-    <WrapPanel>
-        <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Просмотр товаров"></Label>
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button x:Name="brandButton" Click="brand" Content="Бренды"/>
-            <Button x:Name="categoryButton"  Click="category" Content="Категории"/>
-            <Button x:Name="tagButton"  Click="tag" Content="Тэги"/>
-            <Button x:Name="productButton" Click="product" Content="Продукт"/>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Просмотр товаров"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="brandButton" Click="brand" Content="Бренды"/>
+                <Button x:Name="categoryButton"  Click="category" Content="Категории"/>
+                <Button x:Name="tagButton"  Click="tag" Content="Тэги"/>
+                <Button x:Name="productButton" Click="product" Content="Продукт"/>
+            </StackPanel>
         </StackPanel>
-        <Grid Margin="5">
+        <Grid  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Margin="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="325"/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
+                <RowDefinition Height="0.35*"/>
                 <RowDefinition/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="0.1*"/>
             </Grid.RowDefinitions>
-
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <Label>Поиск</Label>
                 <TextBox x:Name="SearchBox" TextChanged="TextBox_TextChanged" Text="{Binding searchQuery, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Введите текст для поиска"/>
@@ -89,6 +99,7 @@
 
                 <Button Click="Button_Click" Margin="5">Сбросить</Button>
             </StackPanel>
+
             <materialDesign:ColorZone Grid.Row="1" Grid.Column="1" Mode="SecondaryMid">
                 <ListView Margin="5" MouseDoubleClick="edit" SelectedItem="{Binding current}" ItemsSource="{Binding products}" Name="FormsList" HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
@@ -96,68 +107,74 @@
                             <Border x:Name="ProductBorder" Style="{StaticResource Stock}" >
 
                                 <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <StackPanel>
-                                    <TextBlock FontSize="15" Text="{Binding Name}"/>
-                                    <TextBlock>
-                                    <Run Text="★"/>
-                                    <Run Text="Рейтинг "/>
-                                    <Run Text="{Binding Rating}"/>
-                                    </TextBlock>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock FontSize="15" Text="{Binding Name}"/>
                                         <TextBlock>
- <Run Text="Категория "/>
- <Run Text="{Binding Category.Name}"/>
+                                   <Run Text="★"/>
+                                   <Run Text="Рейтинг "/>
+                                   <Run Text="{Binding Rating}"/>
                                         </TextBlock>
                                         <TextBlock>
-                                    <Run Text="Описание "/>
-                                    <Run Text="{Binding Description}"/>
-                                    </TextBlock>
-                                    <ItemsControl ItemsSource="{Binding Tags}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Padding="1">
-                                                    <Run Text="#"/>
-                                                    <Run Text="{Binding Name}"/>
-                                                </TextBlock>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                        <ItemsControl.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <StackPanel Orientation="Horizontal"></StackPanel>
-                                            </ItemsPanelTemplate>
-                                        </ItemsControl.ItemsPanel>
-                                    </ItemsControl>
-                                </StackPanel>
-                                <Grid Grid.Column="1">
+<Run Text="Категория "/>
+<Run Text="{Binding Category.Name}"/>
+                                        </TextBlock>
+                                        <TextBlock>
+                                   <Run Text="Описание "/>
+                                   <Run Text="{Binding Description}"/>
+                                        </TextBlock>
+                                        <ItemsControl ItemsSource="{Binding Tags}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Padding="1">
+                                                   <Run Text="#"/>
+                                                   <Run Text="{Binding Name}"/>
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal"></StackPanel>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                    <Grid Grid.Column="1">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock HorizontalAlignment="Right" Text="$"/>
                                             <TextBlock HorizontalAlignment="Right" Text="{Binding Price, StringFormat='F2'}"/>
-                                    </StackPanel>
+                                        </StackPanel>
                                         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock HorizontalAlignment="Right" Text="Остаток: "/>
                                             <TextBlock HorizontalAlignment="Right" Text="{Binding Stock}"/>
                                         </StackPanel>
                                     </Grid>
-                            </Grid>
+                                </Grid>
                             </Border>
                             <DataTemplate.Triggers>
                                 <DataTrigger Binding="{Binding Stock, Converter={StaticResource BorderConverter}, ConverterParameter=10}" Value="True">
                                     <Setter TargetName="ProductBorder" Property="BorderBrush" Value="{StaticResource BalanceBorder}"/>
                                     <Setter TargetName="ProductBorder" Property="BorderThickness" Value="3"/>
                                 </DataTrigger>
-                                
+
                             </DataTemplate.Triggers>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </materialDesign:ColorZone>
-            <WrapPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <WrapPanel HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2" >
                 <TextBlock Text="{Binding products.Count, StringFormat='{} Всего записей:{0}'}"/>
                 <TextBlock Text="{Binding Items.Count, ElementName=FormsList, StringFormat='{} Показано: {0}'}"/>
             </WrapPanel>
         </Grid>
-    </WrapPanel>
+
+
+
+    </Grid>
+
+    
+    
 </Page>
