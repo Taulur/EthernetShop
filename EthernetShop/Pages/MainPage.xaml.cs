@@ -132,10 +132,26 @@ namespace EthernetShop.Pages
             var product = (Product)obj;
             if (searchQuery != null && !product.Name.Contains(searchQuery, StringComparison.CurrentCultureIgnoreCase))
                 return false;
-            if (!filterPriceFrom.IsNullOrEmpty() && Convert.ToDecimal(filterPriceFrom) > product.Price)
-                return false;
-            if (!filterPriceTo.IsNullOrEmpty() && Convert.ToDecimal(filterPriceTo) < product.Price)
-                return false;
+            if (!string.IsNullOrEmpty(filterPriceFrom))
+            {
+                if (decimal.TryParse(filterPriceFrom, out decimal priceFromValue))
+                {
+                    if (priceFromValue > product.Price)
+                    {
+                        return false;
+                    }
+                }
+            }
+            if (!string.IsNullOrEmpty(filterPriceTo))
+            {
+                if (decimal.TryParse(filterPriceTo, out decimal priceFromValue))
+                {
+                    if (priceFromValue < product.Price)
+                    {
+                        return false;
+                    }
+                }
+            }
             if (CategorySelectedMode != -1)
             {
                 if (product.CategoryId != CategorySelectedMode + 1)

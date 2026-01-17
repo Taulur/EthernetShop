@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -59,10 +63,6 @@
       "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\converter\\borderconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\converter\\borderconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -112,33 +112,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginPage.xaml",
-              "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\LoginPage.xaml",
-              "RelativeDocumentMoniker": "EthernetShop\\Pages\\LoginPage.xaml",
-              "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\LoginPage.xaml",
-              "RelativeToolTip": "EthernetShop\\Pages\\LoginPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-17T04:08:02.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EditBrandPage.xaml",
-              "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditBrandPage.xaml",
-              "RelativeDocumentMoniker": "EthernetShop\\Pages\\EditBrandPage.xaml",
-              "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditBrandPage.xaml",
-              "RelativeToolTip": "EthernetShop\\Pages\\EditBrandPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-17T04:30:24.923Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\MainPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\MainPage.xaml",
@@ -150,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\App.xaml.cs",
               "RelativeDocumentMoniker": "EthernetShop\\App.xaml.cs",
@@ -162,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "BrandPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\BrandPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\BrandPage.xaml",
@@ -173,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\App.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\App.xaml",
@@ -185,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\MainWindow.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\MainWindow.xaml",
@@ -196,7 +174,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "EthernetShop\\Pages\\MainPage.xaml.cs",
+              "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\MainPage.xaml.cs",
+              "RelativeToolTip": "EthernetShop\\Pages\\MainPage.xaml.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAUwIoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T19:18:54.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EditBrandPage.xaml",
+              "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditBrandPage.xaml",
+              "RelativeDocumentMoniker": "EthernetShop\\Pages\\EditBrandPage.xaml",
+              "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditBrandPage.xaml",
+              "RelativeToolTip": "EthernetShop\\Pages\\EditBrandPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-17T04:30:24.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "EthernetShop\\Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "EthernetShop\\Pages\\LoginPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-17T04:08:02.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "EditTagPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditTagPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\EditTagPage.xaml",
@@ -207,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CategoryPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\CategoryPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\CategoryPage.xaml",
@@ -218,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EditCategoryPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditCategoryPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\EditCategoryPage.xaml",
@@ -229,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EditProductPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\EditProductPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\EditProductPage.xaml",
@@ -240,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TagPage.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\TagPage.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\TagPage.xaml",
@@ -251,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "LoginPage.xaml.cs",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\LoginPage.xaml.cs",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\LoginPage.xaml.cs",
@@ -263,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "PasswordValidation.cs",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Validation\\PasswordValidation.cs",
               "RelativeDocumentMoniker": "EthernetShop\\Validation\\PasswordValidation.cs",
@@ -272,18 +285,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-17T04:10:38.907Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "EthernetShop\\Pages\\MainPage.xaml.cs",
-              "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\MainPage.xaml.cs",
-              "RelativeToolTip": "EthernetShop\\Pages\\MainPage.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAUwKoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T19:18:54.368Z"
             },
             {
               "$type": "Document",
