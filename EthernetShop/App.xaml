@@ -24,6 +24,9 @@
                     <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
                         <Setter Property="AutomationProperties.Name" Value="" />
                     </Style>
+                    <Style TargetType="PasswordBox" BasedOn="{StaticResource MaterialDesignPasswordBox}">
+                        <Setter Property="AutomationProperties.Name" Value="" />
+                    </Style>
 
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
