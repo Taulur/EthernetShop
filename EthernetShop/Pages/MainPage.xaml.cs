@@ -254,7 +254,17 @@ namespace EthernetShop.Pages
             if (PriceToBox != null)
                 PriceToBox.Text = string.Empty;
 
-          
+            foreach (RadioButton radio in CategoryPanel.Children)
+            {
+                radio.IsChecked = false;
+            }
+
+            foreach (RadioButton radio in BrandPanel.Children)
+            {
+                radio.IsChecked = false;
+            }
+
+
             productsView.Refresh();
 
         }
