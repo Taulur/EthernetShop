@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|solutionrelative:ethernetshop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B839426-87AA-474D-B11D-A6090CE8BBB0}|EthernetShop\\EthernetShop.csproj|c:\\\u0443\u0447\u0435\u0431\u0430\\ethernetshop\\ethernetshop\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -163,18 +163,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\MainWindow.xaml",
               "RelativeDocumentMoniker": "EthernetShop\\MainWindow.xaml",
               "ToolTip": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\MainWindow.xaml",
               "RelativeToolTip": "EthernetShop\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-06T18:22:25.347Z"
+              "WhenOpened": "2025-12-06T18:22:25.347Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\\u0423\u0447\u0435\u0431\u0430\\EthernetShop\\EthernetShop\\Pages\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "EthernetShop\\Pages\\MainPage.xaml.cs",
@@ -182,7 +183,8 @@
               "RelativeToolTip": "EthernetShop\\Pages\\MainPage.xaml.cs",
               "ViewState": "AgIAAHQAAAAAAAAAAAAUwIoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T19:18:54.368Z"
+              "WhenOpened": "2025-12-25T19:18:54.368Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

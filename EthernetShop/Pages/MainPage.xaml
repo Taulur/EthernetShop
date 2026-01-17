@@ -147,7 +147,7 @@
                                             <TextBlock HorizontalAlignment="Right" Text="$"/>
                                             <TextBlock HorizontalAlignment="Right" Text="{Binding Price, StringFormat='F2'}"/>
                                         </StackPanel>
-                                        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <StackPanel Margin="0,0,0,17" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock HorizontalAlignment="Right" Text="Остаток: "/>
                                             <TextBlock HorizontalAlignment="Right" Text="{Binding Stock}"/>
                                         </StackPanel>
