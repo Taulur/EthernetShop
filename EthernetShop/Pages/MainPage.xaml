@@ -41,8 +41,10 @@
                 <ComboBox x:Name="SortBox" SelectionChanged="ComboBox_SelectionChanged">
                     <ComboBox.Items >
                         <ComboBoxItem Tag="Name">По наименованию</ComboBoxItem>
-                        <ComboBoxItem Tag="Price">По цене</ComboBoxItem>
-                        <ComboBoxItem Tag="Stock">По количеству</ComboBoxItem>
+                        <ComboBoxItem Tag="PriceAscending">По цене (Возрастание)</ComboBoxItem>
+                        <ComboBoxItem Tag="PriceDescending">По цене (Убывание)</ComboBoxItem>
+                        <ComboBoxItem Tag="StockAscending">По количеству (Возрастание)</ComboBoxItem>
+                        <ComboBoxItem Tag="StockDescending">По количеству (Убывание)</ComboBoxItem>
                     </ComboBox.Items>
                 </ComboBox>
                 <Label>Фильтры</Label>

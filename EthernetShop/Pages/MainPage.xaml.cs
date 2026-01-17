@@ -86,8 +86,9 @@ namespace EthernetShop.Pages
 
             InitializeComponent();
 
+
             var adminButtons = new List<Button>
-    {
+                  {
         brandButton,
         categoryButton,
         tagButton,
@@ -165,13 +166,21 @@ namespace EthernetShop.Pages
                         productsView.SortDescriptions.Add(new SortDescription("Name",
                         ListSortDirection.Ascending));
                         break;
-                    case "Price":
+                    case "PriceAscending":
                         productsView.SortDescriptions.Add(new SortDescription("Price",
                         ListSortDirection.Ascending));
                         break;
-                    case "Stock":
+                    case "PriceDescending":
+                        productsView.SortDescriptions.Add(new SortDescription("Price",
+                        ListSortDirection.Descending));
+                        break;
+                    case "StockAscending":
                         productsView.SortDescriptions.Add(new SortDescription("Stock",
                         ListSortDirection.Ascending));
+                        break;
+                    case "StockDescending":
+                        productsView.SortDescriptions.Add(new SortDescription("Stock",
+                        ListSortDirection.Descending));
                         break;
                 }
             }
@@ -219,7 +228,7 @@ namespace EthernetShop.Pages
            
             SortBox.SelectedIndex = -1;
 
-            // 4. Очищаем поля ввода
+          
             if (SearchBox != null)
                 SearchBox.Text = string.Empty;
 
