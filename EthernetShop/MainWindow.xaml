@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EthernetShop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="Интернет магазин" Height="500" Width="800">
     <Frame NavigationUIVisibility="Hidden" Source="Pages/LoginPage.xaml"/>
 </Window>

@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
-      Title="TagPage">
+      Title="Просмотр тэгов">
 
     <StackPanel HorizontalAlignment="Center">
         <Label Margin="5" HorizontalAlignment="Center" FontSize="20" Content="Просмотр тэгов"></Label>

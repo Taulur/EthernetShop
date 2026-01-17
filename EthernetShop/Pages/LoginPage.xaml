@@ -8,10 +8,11 @@
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginPage">
+      Title="Вход">
 
     <StackPanel>
-        <Label>Вход в интернет магазин</Label>
+        <Label FontSize="25">Авторизация</Label>
+        <TextBlock>Вход в интернет магазин</TextBlock>
         <TextBlock>Введите пароль для входа как администратор</TextBlock>
         <PasswordBox x:Name="passwordBox"/>
         <Button Click="admin">Войти</Button>

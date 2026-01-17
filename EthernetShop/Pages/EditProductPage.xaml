@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
        DataContext="{Binding RelativeSource={RelativeSource Self}}"
-      Title="EditProductPage">
+      Title="Взаимодействие с продуктом">
 
 
     <StackPanel>
