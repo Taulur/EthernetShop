@@ -132,12 +132,11 @@
                                     </ItemsControl>
                                 </StackPanel>
                                 <Grid Grid.Column="1">
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-                                            <TextBlock HorizontalAlignment="Right" Text="Цена:"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock HorizontalAlignment="Right" Text="{Binding Price}"/>
                                     </StackPanel>
-                                        <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" HorizontalAlignment="Right">
-                                            <TextBlock HorizontalAlignment="Right" Text="Остаток:"/>
+                                        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <TextBlock HorizontalAlignment="Right" Text="Остаток: "/>
                                             <TextBlock HorizontalAlignment="Right" Text="{Binding Stock}"/>
                                         </StackPanel>
                                     </Grid>
