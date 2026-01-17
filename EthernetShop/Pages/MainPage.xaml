@@ -133,7 +133,7 @@
                                 </StackPanel>
                                 <Grid Grid.Column="1">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                            <TextBlock HorizontalAlignment="Right" Text="{Binding Price}"/>
+                                            <TextBlock HorizontalAlignment="Right" Text="{Binding Price, StringFormat='F2'}"/>
                                     </StackPanel>
                                         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock HorizontalAlignment="Right" Text="Остаток: "/>
