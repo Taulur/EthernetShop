@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EthernetShop.Pages"
+      xmlns:validators="clr-namespace:BindingCollections.ValidationRules"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
@@ -11,7 +13,7 @@
     <StackPanel>
         <Label>Вход в интернет магазин</Label>
         <TextBlock>Введите пароль для входа как администратор</TextBlock>
-        <TextBox x:Name="Password"></TextBox>
+        <PasswordBox x:Name="passwordBox"/>
         <Button Click="admin">Войти</Button>
         <Button Click="guest">Гость</Button>
         

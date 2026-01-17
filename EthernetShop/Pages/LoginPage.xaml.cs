@@ -27,7 +27,7 @@ namespace EthernetShop.Pages
 
         private void admin(object sender, RoutedEventArgs e)
         {
-            if (Password.Text == "1234")
+            if (passwordBox.Password == "1234")
                 NavigationService.Navigate(new MainPage(true));
             else
                 MessageBox.Show("Пароль введен неверно");
